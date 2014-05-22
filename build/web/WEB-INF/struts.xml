@@ -7,8 +7,25 @@
     <package name="default" extends="struts-default">
     </package>
     <package name="login">
-        <action name="login" class="actions.login">
+        
+        <action name="login">
             <result>/vista/login.jsp</result>
         </action>
+        
+        <action name="loginprocess" class="actions.login">  
+            <result name="success"  >loginsuccess.jsp</result>  
+            <result name="error" >loginerror.jsp</result>  
+        </action>  
+        
+        <action name="logout" class="actions.login" method="logout">  
+            <result name="success" >logoutsuccess.jsp</result>  
+        </action>  
+
+        <!--  MODERADOR O NO CAMBIA EL LOGIN --> 
+        <action name="profile" class="actions.perfil">  
+            <result name="success" >profilesuccess.jsp</result>  
+            <result name="error" >profileerror.jsp</result>  
+        </action>  
+        
     </package>
 </struts>

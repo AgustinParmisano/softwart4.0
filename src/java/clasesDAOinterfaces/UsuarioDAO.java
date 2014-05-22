@@ -12,6 +12,6 @@ import entities.Usuario;
  *
  * @author agustin
  */
-public interface UsuarioDAO extends BaseGenericDAO<Usuario, Long>{
+public interface UsuarioDAO extends BaseGenericDAO<Usuario, Integer>{
     
 }

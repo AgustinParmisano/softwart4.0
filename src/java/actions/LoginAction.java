@@ -6,11 +6,14 @@
 
 package actions;
 
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+
 /**
  *
  * @author agustin
  */
-public class LoginAction{
+public class LoginAction implements SessionAware{
     String identificacion;
     String clave;
     String usuario;
@@ -56,6 +59,11 @@ public class LoginAction{
         System.out.println("Entro a LoginAction execute");
         
         return "success";
+    }
+
+    @Override
+    public void setSession(Map<String, Object> map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

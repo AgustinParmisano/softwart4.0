@@ -1,0 +1,8 @@
+entities/Sistema_.java
+entities/Tag_.java
+entities/Comentario_.java
+entities/Sancion_.java
+entities/Usuario_.java
+entities/Voto_.java
+entities/Publicacion_.java
+entities/Evento_.java
