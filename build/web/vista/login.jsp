@@ -13,11 +13,14 @@
         <title>Login</title>
     </head>
     <body>
+        
         <h1>Ingrese</h1>
         <s:form action="LoginAction">  
             <s:textfield name="username" label="Nombre"></s:textfield>  
             <s:password name="userpass" label="Password"></s:password>  
-            <s:submit value="login"></s:submit>  
-        </s:form>   
+            <s:submit value="login" label="Ingresar"></s:submit>  
+        </s:form>
+
+        
     </body>
 </html>

@@ -9,9 +9,19 @@
             <result name="success"> formulario.jsp </result>
         </action>  
         
-        <action name="LoginAction" class="actions.LoginAction">  
+        <action name="LoginAction" class="actions.LoginAction">
+            <result name="moderador" >menuModerador.jsp</result>
+            <result name="usuario" >menuUsuario.jsp</result>  
             <result name="success">loginsuccess.jsp</result>  
-            <result name="error">loginerror.jsp</result>  
+            <result name="error">loginerror.jsp</result>
+            <result name="faltaUser">loginerror.jsp</result>  
+            <result name="faltaPass">loginerror.jsp</result>  
+        </action>
+    </package>
+    
+    <package name="publicaciones" extends="struts-default">
+        <action name="ObtenerPublicacionesUsuarioAction" class="actions.PublicacionesAction">
+            
         </action>
     </package>
 

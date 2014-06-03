@@ -6,20 +6,39 @@
 
 package actions;
 
+import com.opensymphony.xwork2.ActionSupport;
 import java.util.Map;
+import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
  * @author agustin
  */
-public class LoginAction implements SessionAware{
+public class LoginAction extends ActionSupport implements SessionAware{
     String identificacion;
-    String clave;
-    String usuario;
+    String userpass;
+    String username;
     String perfil;
+    private SessionMap<String,String> sessionmap;
     
-
+        
+    public String execute() throws Exception {
+        perfil  = LoginDao.validate(username, userpass);
+        if(perfil.equals("faltaUser")){
+            addFieldError("username","Ingrese nombre de usuario");
+        }else if(perfil.equals("faltaPass")){
+            addFieldError("userpass","Ingrese su clave");
+        }
+        return perfil;
+    }
+    
+    @Override
+    public void setSession(Map<String, Object> map) {
+        sessionmap = (SessionMap) map;
+        sessionmap.put("login","true");
+    }
+    
     public String getIdentificacion() {
         return identificacion;
     }
@@ -28,20 +47,20 @@ public class LoginAction implements SessionAware{
         this.identificacion = identificacion;
     }
 
-    public String getClave() {
-        return clave;
+    public String getUserpass() {
+        return userpass;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setUserpass(String userpass) {
+        this.userpass = userpass;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPerfil() {
@@ -52,18 +71,5 @@ public class LoginAction implements SessionAware{
         this.perfil = perfil;
     }
  
-    public LoginAction() {
-    }
-    
-    public String execute() throws Exception {
-        System.out.println("Entro a LoginAction execute");
-        
-        return "success";
-    }
-
-    @Override
-    public void setSession(Map<String, Object> map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
