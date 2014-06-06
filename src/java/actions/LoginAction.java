@@ -32,7 +32,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
         }
         return perfil;
     }
-    
+
     @Override
     public void setSession(Map<String, Object> map) {
         sessionmap = (SessionMap) map;
