@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>NUEVA PUBLICACION</h1>
-        <s:form action="NuevaPublicacionAction">  
+        <s:form action="NuevaPublicacionAction" name="formNuevaPublicacion">  
             <s:textfield name="nombrePublicacion" label="Nombre Publicacion"></s:textfield>
             <s:textfield name="descripcionPublicacion" label="Descripcion Publicacion"></s:textfield>
             <s:file name="imagenPublicacion" label="Imagen Publicacion"></s:file>

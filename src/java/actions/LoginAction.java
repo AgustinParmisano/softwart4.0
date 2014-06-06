@@ -6,6 +6,7 @@
 
 package actions;
 
+import clasesDAOImpl.LoginDao;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;

@@ -21,7 +21,10 @@
     
     <package name="publicaciones" extends="struts-default">
         <action name="ObtenerPublicacionesUsuarioAction" class="actions.PublicacionesAction">
-            
+            <!-- Redirect to another namespace -->
+            <result name="publique" type="redirect">
+                <param name="location">/vista/sinPublicacionesError.jsp</param>
+            </result>
         </action>
     </package>
 
